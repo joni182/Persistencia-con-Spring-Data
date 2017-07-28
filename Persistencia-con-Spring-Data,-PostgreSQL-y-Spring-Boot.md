@@ -20,10 +20,10 @@ spring:
 server:
     port: 8080
 ```
-Asi abremos configurado jpa, el acceso a nuestra base de datos Postgres y el puerto en el que escuchará nuestra aplicación.
+Asi habremos configurado jpa, el acceso a nuestra base de datos Postgres y el puerto en el que escuchará nuestra aplicación.
 
 ## Entidades
-Para el ejemplo usaremos una entidad simple, como vemos, todas las anotaciones pertenecen al paquete `javax.persistence.*` por lo que no son propiamente de String Data si no que pertenencen a la API de persistencia de Java.
+Para el ejemplo usaremos una entidad simple, como vemos, todas las anotaciones pertenecen al paquete `javax.persistence.*` por lo que no son propiamente de String Data, si no que pertenencen a la API de persistencia de Java.
 ``` java
 import java.util.Date;
 
