@@ -177,4 +177,8 @@ public class SpringDataApplication {
 	}
 }
 ```
-Bueno, pues con esto y un bizcocho ya tenemos despegado un backend completamente funcional, no hemos ni tenido que crear en nuestra base de datos las tablas necesarias, el propio Spring se encargará de crear el reflejo de nuestros POJOs en la base de datos que elijamos.
+Bueno, pues con esto y un bizcocho ya tenemos despegado un backend completamente funcional, no hemos ni tenido que crear en nuestra base de datos las tablas necesarias, el propio Spring se encargará de crear el reflejo de nuestros POJOs en la base de datos que elijamos. En este [repositorio](https://github.com/joni182/spring-data-example "spring-data-example") podrás encontrar el código original del ejemplo.
+
+Tengo que darle las gracias a mi gran amigo y maestro Fernando, el cual no solo tiene la infinita paciencia de guiarme en este mundillo casi esotérico si no que además me brinda la oportudinadad escribir en este magnífico blog.
+
+Espero os sea de utilidad y no se os haya hecho demasiado largo. Hasta la próxima ;).
