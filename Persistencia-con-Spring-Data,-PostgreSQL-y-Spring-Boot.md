@@ -2,7 +2,7 @@
 ## Persistencia con Spring Data, PostgreSQL y Spring Boot.
 Hoy veremos que pueden hacer los chicos de [Spring](https://spring.io/ "https://spring.io/") para facilitarnos la vida tanto a la hora de gestionar la persistencia de datos de nuestros proyectos como a la de lanzarlos de forma sencilla con [String Boot](https://projects.spring.io/spring-boot/ "https://projects.spring.io/spring-boot/"), el cual con solo unas lineas de código nos levantara nuestra aplicación web y la dejara lista para usar. [Spring Data JPA](http://projects.spring.io/spring-data/ "http://projects.spring.io/spring-data/") nos ayudará con el ORM, usando hibernate de forma totalmente trasparente para nosotros e implementando gran parte del código necesario para realizar la gran mayoria de nuestras operaciones CRUD. ¡Al lio!
 ## Configuración
-La filosofía de Spring es hacernos el trabajo lo menos engorroso posible, por eso prescindiremos de los XML y las anotaciones para configurar nuestro framework, para ello usaremos un archivo application.yml que ubicaremos en `/miAplicacion/src/main/resources/application.yml`.https://projects.spring.io/spring-boot/
+La filosofía de Spring es hacernos el trabajo lo menos engorroso posible, por eso prescindiremos de los XML y las anotaciones para configurar nuestro framework, para ello usaremos un archivo application.yml que ubicaremos en `/miAplicacion/src/main/resources/application.yml`.
 
 ``` jaml
 spring:
@@ -177,8 +177,4 @@ public class SpringDataApplication {
 	}
 }
 ```
-Bueno, pues con esto y un bizcocho ya tenemos despegado un backend completamente funcional, no hemos ni tenido que crear en nuestra base de datos las tablas necesarias, el propio Spring se encargará de crear el reflejo de nuestros POJOs en la base de datos que elijamos. En este [repositorio](https://github.com/joni182/spring-data-example "spring-data-example") podrás encontrar el código original del ejemplo.
-
-Tengo que darle las gracias a mi gran amigo y maestro Fernando, el cual no solo tiene la infinita paciencia de guiarme en este mundillo casi esotérico si no que además me brinda la oportudinadad escribir en este magnífico blog.
-
-Espero os sea de utilidad y no se os haya hecho demasiado largo. Hasta la próxima ;).
+Bueno, pues con esto y un bizcocho ya tenemos despegado un backend completamente funcional, no hemos ni tenido que crear en nuestra base de datos las tablas necesarias, el propio Spring se encargará de crear el reflejo de nuestros POJOs en la base de datos que elijamos.
