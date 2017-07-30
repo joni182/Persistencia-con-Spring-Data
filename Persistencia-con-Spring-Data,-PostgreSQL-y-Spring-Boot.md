@@ -1,8 +1,8 @@
 
 ## Persistencia con Spring Data, PostgreSQL y Spring Boot.
-Hoy veremos que pueden hacer los chicos de Spring para facilitarnos la vida tanto a la hora de gestionar la persistencia de datos de nuestros proyectos como a la de lanzarlos de forma sencilla con String Boot, el cual con solo unas lineas de código nos levantara nuestra aplicacción web y la dejara lista para usar. Spring Data JPA nos ayudará con el ORM, usando hibernate de forma totalmente trasparente para nosotros e implementando gran parte del código necesario para realizar la gran mayoria de nuestras operaciones CRUD. ¡Al lio!
+Hoy veremos que pueden hacer los chicos de Spring para facilitarnos la vida tanto a la hora de gestionar la persistencia de datos de nuestros proyectos como a la de lanzarlos de forma sencilla con String Boot, el cual con solo unas lineas de código nos levantara nuestra aplicación web y la dejara lista para usar. Spring Data JPA nos ayudará con el ORM, usando hibernate de forma totalmente trasparente para nosotros e implementando gran parte del código necesario para realizar la gran mayoria de nuestras operaciones CRUD. ¡Al lio!
 ## Configuración
-La filosofia de Spring es hacernos el trabajo lo menos engorroso posible, por eso prescindiremos de los XML y las anotaciones para configurar nuestro framework, para ello usaremos un archivo application.yml que ubicaremos en `/miAplicacion/src/main/resources/application.yml`.
+La filosofía de Spring es hacernos el trabajo lo menos engorroso posible, por eso prescindiremos de los XML y las anotaciones para configurar nuestro framework, para ello usaremos un archivo application.yml que ubicaremos en `/miAplicacion/src/main/resources/application.yml`.
 
 ``` jaml
 spring:
@@ -81,7 +81,7 @@ public class Animals {
 }
 ```
 ## Repositorio
-Ahora viene el momento de la mágia. Ahora tocaria implementar toda la lógica del DAO para las **operaciones CRUD** pero nosotros lo haremos en 30 segundos,¿Como?, pues con la anotación `@Repository` y extendiendo de `JpaRepository<Animals,Long>`. Como vemos, es una clase parametrizada en la que deberemos colocar en primer lugar el tipo de la clase entidad que vamos a gestionar y en segundo el tipo de su clave primaria. `<Animals,Long>` 
+Ahora viene el momento de la magia. Ahora tocaria implementar toda la lógica del DAO para las **operaciones CRUD** pero nosotros lo haremos en 30 segundos,¿Como?, pues con la anotación `@Repository` y extendiendo de `JpaRepository<Animals,Long>`. Como vemos, es una clase parametrizada en la que deberemos colocar en primer lugar el tipo de la clase entidad que vamos a gestionar y en segundo el tipo de su clave primaria. `<Animals,Long>` 
 ``` java
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -92,11 +92,11 @@ public interface AnimalRepository extends JpaRepository<Animals,Long> {
 }
 ```
 ## Controlador
-Llega la hora de configurar nuestro controlador. Vamos ha hacer uso de `animalRepository` y de los metodos que ha heredado para hacer las operaciones básicas **CRUD**, lo haremos con las siguientes anotaciones.
-`@RestController`: Es la conjunción de dos anotaciones,`@Controller` y `@ResponseBody`. De esa manera indicará que esa clase es un controlador web y que lo que devuelvan los metodos de esa clase se enviaran al cuerpo de la página web. 
+Llega la hora de configurar nuestro controlador. Vamos ha hacer uso de `animalRepository` y de los métodos que ha heredado para hacer las operaciones básicas **CRUD**, lo haremos con las siguientes anotaciones.
+`@RestController`: Es la conjunción de dos anotaciones,`@Controller` y `@ResponseBody`. De esa manera indicará que esa clase es un controlador web y que lo que devuelvan los métodos de esa clase se enviaran al cuerpo de la página web. 
 `@RequestMapping`: Con esto podemos indicar la url que disparará el código anotado y bajo que tipo de petición, GET, POST, PUT...
-`@RequestBody`: Capturará la información que le llegue de la vista y lo convertira al tipo de dato apropiado.
-`@PathVariable`: Tomará de la url la parte que le indiquemos para usarla como parametro de entrada en el método que lo necesitemos. 
+`@RequestBody`: Capturará la información que le llegue de la vista y lo convertirá al tipo de dato apropiado.
+`@PathVariable`: Tomará de la url la parte que le indiquemos para usarla como parámetro de entrada en el método que lo necesitemos. 
 En este ejemplo, con la url `localhost:8080/animals/254` nos devolveria el **JSON** equivalente al registro con id 254
 ```java
     @RequestMapping(method = RequestMethod.GET, value = "/{animalsId}")
@@ -105,7 +105,7 @@ En este ejemplo, con la url `localhost:8080/animals/254` nos devolveria el **JSO
     }
 ```
 ```java
-mport java.util.List;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -177,3 +177,8 @@ public class SpringDataApplication {
 	}
 }
 ```
+Bueno, pues con esto y un bizcocho ya tenemos despegado un backend completamente funcional, no hemos ni tenido que crear en nuestra base de datos las tablas necesarias, el propio Spring se encargará de crear el reflejo de nuestros POJOs en la base de datos que elijamos.
+
+Tengo que darle las gracias a mi gran amigo y maestro Fernando, el cual no solo tiene la infinita paciencia de guiarme en este mundillo casi esotérico si no que además me brinda la oportudinadad escribir en este magnífico blog.
+
+Espero os sea de utilidad y no se os haya hecho demasiado largo. Hasta la próxima ;).
