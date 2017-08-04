@@ -1,5 +1,16 @@
-
-## Persistencia con Spring Data, PostgreSQL y Spring Boot.
+---
+layout: post
+title: "Persistence with Spring Data, PostgreSQL & Spring Boot."
+description: 'Ejemplo básico de como configurar y usar Spring Data con PostgreSQL y arancarlo con Spring Boot.'
+tags:
+- Spring Data
+- Spring Boot
+- PostgreSQL
+- database
+categories:
+- Snippets
+twitter_text: '@posgresql con @springdata y @springboot'
+---
 Hoy veremos que pueden hacer los chicos de [Spring](https://spring.io/ "https://spring.io/") para facilitarnos la vida tanto a la hora de gestionar la persistencia de datos de nuestros proyectos como a la de lanzarlos de forma sencilla con [String Boot](https://projects.spring.io/spring-boot/ "https://projects.spring.io/spring-boot/"), el cual con solo unas lineas de código nos levantara nuestra aplicación web y la dejara lista para usar. [Spring Data JPA](http://projects.spring.io/spring-data/ "http://projects.spring.io/spring-data/") nos ayudará con el ORM, usando hibernate de forma totalmente trasparente para nosotros e implementando gran parte del código necesario para realizar la gran mayoria de nuestras operaciones CRUD. ¡Al lio!
 ## Configuración
 La filosofía de Spring es hacernos el trabajo lo menos engorroso posible, por eso prescindiremos de los XML y las anotaciones para configurar nuestro framework, para ello usaremos un archivo application.yml que ubicaremos en `/miAplicacion/src/main/resources/application.yml`.
